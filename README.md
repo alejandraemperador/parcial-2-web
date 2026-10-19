@@ -60,11 +60,11 @@ No modificar la configuración, las entidades, los métodos resueltos, el cargad
 
 Buscar `TODO` únicamente en:
 
-1. `src/reservations/dto/create-reservation.dto.ts`
-2. `src/reservations/reservations.controller.ts`
-3. `src/reservations/reservations.service.ts`
+1. `src/reservations/dto/create-reservation.dto.ts` YA
+2. `src/reservations/reservations.controller.ts` YA
+3. `src/reservations/reservations.service.ts` YA
 4. `src/reservations/reservation-rules.service.ts`
-5. `src/reservations/reservations.module.ts`
+5. `src/reservations/reservations.module.ts` YA
 6. `src/reservations/reservation-rules.service.spec.ts`
 7. `src/reservations/reservations.service.spec.ts`
 
