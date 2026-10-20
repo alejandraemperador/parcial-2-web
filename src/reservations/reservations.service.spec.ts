@@ -9,22 +9,16 @@ import { describe, beforeEach, it, expect, jest } from '@jest/globals';
 
 describe('ReservationsService', () => {
   let service: ReservationsService;
-  let reservationsRepositoryMock: {
-    findOne: jest.Mock;
-    find: jest.Mock;
-    create: jest.Mock;
-    save: jest.Mock;
+  let reservationsRepositoryMock = {
+      findOne: jest.fn <(options:any)=>Promise<ReservationEntity | null>>(),
+      find: jest.fn <(options: any) => Promise<ReservationEntity[]>>(),
+      create: jest.fn(),
+      save: jest.fn <(options: any) => Promise<ReservationEntity>>(),
   };
   let roomsRepositoryMock: { findOneBy: jest.Mock };
   let reservationRulesServiceMock: { ensureCanCancel: jest.Mock };
 
   beforeEach(async () => {
-    reservationsRepositoryMock = {
-      findOne: jest.fn(),
-      find: jest.fn(),
-      create: jest.fn(),
-      save: jest.fn(),
-    };
     roomsRepositoryMock = { findOneBy: jest.fn() };
     reservationRulesServiceMock = { ensureCanCancel: jest.fn() };
 
@@ -57,7 +51,7 @@ describe('ReservationsService', () => {
 
     expect(reservationRulesServiceMock.ensureCanCancel).toHaveBeenCalledWith(reservation);
     expect(reservationsRepositoryMock.save).toHaveBeenCalledWith({
-      ...reservation
+      ...reservation,
       status:'cancelled',
     });
     expect(result).toEqual(savedReservation);
