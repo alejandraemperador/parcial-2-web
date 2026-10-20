@@ -3,6 +3,10 @@
 Registrar resultados reales después de implementar y probar los endpoints. Sustituir los IDs de ejemplo por los utilizados.
 
 | Petición y datos utilizados | Código esperado | Código obtenido | Observación |
+
+
+
+
 | --- | --- | --- | --- |
 | Crear una reserva con datos válidos y sala existente. | 201 | Pendiente | |
 | Crear con participants como texto. | 400 | Pendiente | |
